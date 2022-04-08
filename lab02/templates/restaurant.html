@@ -4,6 +4,7 @@
     <meta charset="UTF-8"><title>Top Restaurant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/restaurant.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Restaurant</title>
 </head>
@@ -16,6 +17,32 @@
         <p>Data: {{ restaurant }}</p>
         <h2>Top Restaurant:</h2> 
         <p>Name: {{ restaurant.get('name') }}</p>
+
+        <div class="card">
+            <h2>{{ restaurant.get('name') }}</h2>
+            <img src="{{ restaurant.get('image_url') }}" alt="Image of {{ restaurant.get('name') }}">
+            <div class="card-content">
+                <b>{{ restaurant.get('display_address') }}</b>
+                <table>
+                    <tr>
+                        <td><b>Phone:</b></td>
+                        <td>{{ restaurant.get('phone') }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Price:</b></td>
+                        <td>{{ restaurant.get('price') }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Rating:</b></td>
+                        <td>{{ restaurant.get('rating') }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Review Count:</b></td>
+                        <td>{{ restaurant.get('review_count') }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </main>
 </body>
 </html>
